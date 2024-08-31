@@ -643,7 +643,7 @@ app-emulation/qemu:spice - Enable Spice protocol support via app-emulation/spice
 app-emulation/qemu:ssh - Enable SSH based block device support via net-libs/libssh2
 app-emulation/qemu:static - Build the User and Software MMU (system) targets as well as tools as static binaries
 app-emulation/qemu:static-user - Build the User targets as static binaries
-app-emulation/qemu:systemtap - Enable SystemTAP/DTrace tracing
+app-emulation/qemu:systemtap - Enable SystemTap/DTrace tracing
 app-emulation/qemu:usb - Enable USB passthrough via dev-libs/libusb
 app-emulation/qemu:usbredir - Use sys-apps/usbredir to redirect USB devices to another machine over TCP
 app-emulation/qemu:vde - Enable VDE-based networking
@@ -1472,6 +1472,7 @@ dev-debug/strace:elfutils - Enable stack backtraces (-k flag) via dev-libs/elfut
 dev-debug/strace:unwind - Enable stack backtraces (-k flag) via sys-libs/libunwind
 dev-debug/sysdig:modules - Build kernel modules needed for tracing local events. Disable this only if you intend to use sysdig purely to work with dumpfiles.
 dev-debug/systemtap:debuginfod - Enable debuginfod support via dev-libs/elfutils libdebuginfod
+dev-debug/systemtap:dtrace-symlink - Provide /usr/bin/dtrace symlink pointing to /usr/bin/stap-dtrace. This prevents coinstallation with dev-debug/dtrace.
 dev-debug/systemtap:libvirt - Support probing of libvirt domains.
 dev-embedded/avrdude:ftdi - Enable support for USB FTDI chips via dev-embedded/libftdi
 dev-embedded/libftdi:tools - build ftdi_eeprom helper tool
@@ -1521,12 +1522,9 @@ dev-embedded/sdcc:z80n - Add support for Zilog Z80N
 dev-embedded/u-boot-tools:envtools - Build only the target-side environment tools
 dev-embedded/urjtag:ftd2xx - Enable support for USB FTDI chips via dev-embedded/libftd2xx
 dev-embedded/urjtag:ftdi - Enable support for USB FTDI chips via dev-embedded/libftdi
-dev-games/godot:bullet - Enable the sci-physics/bullet module
 dev-games/godot:deprecated - Enable support for deprecated features
 dev-games/godot:raycast - Enable the raycast Editor module using media-libs/embree
-dev-games/godot:runner - Build an additional binary optimized for running games (only relevant with USE=tools)
 dev-games/godot:tools - Enable the Godot Editor for game development
-dev-games/godot:webm - Enable the WebM module
 dev-games/guichan:allegro - Build the Allegro frontend
 dev-games/mygui:l10n_ru - Install some additional russian docs if 'doc' useflag enabled
 dev-games/mygui:ogre - Use the ogre render subsystem. (cannot combine with opengl)
@@ -1760,7 +1758,7 @@ dev-java/openjdk:javafx - Import OpenJFX modules at build time, via dev-java/ope
 dev-java/openjdk:jbootstrap - Build OpenJDK twice, the second time using the result of the first
 dev-java/openjdk:source - Install JVM sources
 dev-java/openjdk:system-bootstrap - Bootstrap using installed openjdk
-dev-java/openjdk:systemtap - Enable SystemTAP/DTrace tracing
+dev-java/openjdk:systemtap - Enable SystemTap/DTrace tracing
 dev-java/openjdk-bin:headless-awt - Don't install the X backend for AWT, needed by some GUIs (used to be X flag)
 dev-java/openjdk-bin:source - Install JVM sources
 dev-java/openjdk-jre-bin:headless-awt - Don't install the X backend for AWT, needed by some GUIs (used to be X flag)
@@ -1905,7 +1903,7 @@ dev-lang/qu-prolog:pedro - Pedro subscription/notification communications system
 dev-lang/rakudo:clang - Use Clang to compile the MoarVM backend
 dev-lang/rakudo:moar - Use the MoarVM as backend
 dev-lang/ruby:rdoc - Install dev-ruby/rdoc after installing Ruby.
-dev-lang/ruby:systemtap - Enable SystemTAP/DTrace tracing
+dev-lang/ruby:systemtap - Enable SystemTap/DTrace tracing
 dev-lang/rust:clippy - Install clippy, Rust code linter
 dev-lang/rust:dist - Install dist tarballs (used for bootstrapping)
 dev-lang/rust:miri - Install miri, an interpreter for Rust's mid-level intermediate representation (requires USE=nightly, sometimes is broken)
@@ -3479,7 +3477,7 @@ gui-apps/waybar:tray - Enable support for tray
 gui-apps/waybar:wifi - Enable support for wifi/rfkill
 gui-apps/waypipe:dmabuf - Use DMABUFs for data exchange and hardware decoding
 gui-apps/waypipe:ffmpeg - Link with ffmpeg to allow buffer displays using video streams
-gui-apps/waypipe:systemtap - Enable SystemTAP/DTrace tracing
+gui-apps/waypipe:systemtap - Enable SystemTap/DTrace tracing
 gui-apps/wayvnc:gbm - enable GPU-side screencopy (experimental)
 gui-apps/wayvnc:tracing - Trace kernel and memory calls
 gui-apps/wf-recorder:pipewire - Enable support for audio capture via media-video/pipewire.
@@ -3606,11 +3604,9 @@ kde-apps/krdc:activities - Enable Plasma Activities support via kde-plasma/plasm
 kde-apps/ksystemlog:kdesu - Run as root using kdesu from kde-plasma/kde-cli-tools
 kde-apps/ktouch:X - Enable support for X11 Keyboard Layout Detection
 kde-apps/kwave:qtmedia - Enable playback via Qt5Multimedia
-kde-apps/libkcddb:kf6compat - Disable components colliding with KF6, depend on KF6 components instead
 kde-apps/libkdepim:designer - Build plugins for dev-qt/designer
 kde-apps/libkgapi:kf6compat - Disable components colliding with KF6, depend on KF6 components instead
 kde-apps/libkleo:fancyviewer - Use kde-apps/kpimtextedit for an improved audit log viewer
-kde-apps/libksane:kf6compat - Disable components colliding with KF6, depend on KF6 components instead
 kde-apps/libksane:kwallet - Enable encrypted storage of passwords with kde-frameworks/kwallet
 kde-apps/mailcommon:designer - Build plugins for dev-qt/designer
 kde-apps/marble:aprs - Enable support for APRS data sources
@@ -3673,7 +3669,6 @@ kde-frameworks/kxmlgui:designer - Build plugins for dev-qt/designer
 kde-frameworks/networkmanager-qt:teamd - Enable Teamd control support
 kde-frameworks/prison:qml - Enable QML/QtQuick support via dev-qt/qtdeclarative
 kde-frameworks/purpose:kaccounts - Enable support for system-wide defined KAccounts
-kde-frameworks/purpose:kf6compat - Disable components colliding with KF6, depend on KF6 components instead
 kde-frameworks/purpose:webengine - Enable support for system-wide defined KAccounts
 kde-frameworks/sonnet:aspell - Enable the app-text/aspell spell-checking backend
 kde-frameworks/sonnet:designer - Build plugins for dev-qt/designer
@@ -4297,7 +4292,6 @@ media-libs/imlib2:text - Build text (TrueType font) functions
 media-libs/imlib2:zlib - Zlib loader support
 media-libs/intel-mediasdk:tools - Build analyse and inspect tools
 media-libs/jasper:heif - Enable experimental support for HEIF/HEIC, unsupported by upstream
-media-libs/ksanecore:kf6compat - Disable components colliding with KF6, depend on KF6 components instead
 media-libs/leptonica:utils - Install command-line utilities
 media-libs/lib3mf:system-act - Use system-provided dev-go/act as code generator instead of package provided binaries. This flag will be removed after some time used for testing!
 media-libs/libafterimage:shaping - Use MIT shaped X windows extention.
@@ -4914,7 +4908,7 @@ media-sound/spotify:local-playback - Allows playing local files with the Spotify
 media-sound/spotify:pax-kernel - Triggers a paxmarking of the main Spotify binary
 media-sound/spotify:pulseaudio - Controls the dependency on pulseaudio or apulse
 media-sound/strawberry:moodbar - Enable moodbar support
-media-sound/strawberry:soup - Enable soup support
+media-sound/strawberry:soup - Allow streaming with media-plugins/gst-plugins-soup
 media-sound/strawberry:vlc - Enable media-video/vlc backend
 media-sound/supercollider:ableton-link - Enable support for Ableton Link
 media-sound/supercollider:emacs - Enable the SCEL user interface
@@ -6034,6 +6028,7 @@ net-libs/davix:tools - Install additional tools
 net-libs/freaklabs-chibiarduino:promisc - Enable promisc in the config file for packet sniffing
 net-libs/glib-networking:gnome - Extract HTTP/HTTPS/SOCKS proxy configuration stored using GSettings
 net-libs/glib-networking:libproxy - Use net-libs/libproxy for getting the HTTP/HTTPS/SOCKS proxy configuration
+net-libs/gloox:xhtmlim - expose internal NodeList for optional XHTML-IM rendering without external parser
 net-libs/gnome-online-accounts:gnome - Use gnome-base/gnome-control-center to set GNOME online accounts preferences
 net-libs/gnome-online-accounts:ms365 - Enable Microsoft 365 provider
 net-libs/gnutls:dane - Build libgnutls-dane, implementing DNS-based Authentication of Named Entities. Requires net-dns/unbound
@@ -6129,7 +6124,7 @@ net-libs/nodejs:pax-kernel - Enable building under a PaX enabled kernel
 net-libs/nodejs:snapshot - Enable snapshot creation for faster startup
 net-libs/nodejs:system-icu - Use system dev-libs/icu instead of the bundled version
 net-libs/nodejs:system-ssl - Use system OpenSSL instead of the bundled one
-net-libs/nodejs:systemtap - Enable SystemTAP/DTrace tracing
+net-libs/nodejs:systemtap - Enable SystemTap/DTrace tracing
 net-libs/ntirpc:gssapi - Include support for RPCSEC GSS
 net-libs/ntirpc:rdma - Include support for RDMA RPC
 net-libs/paho-mqtt-c:high-performance - The debugging aids internal tracing and heap tracking are not included
@@ -6453,7 +6448,6 @@ net-misc/kafkacat:json - Enable json support
 net-misc/kea:openssl - Use dev-libs/openssl instead of dev-libs/botan
 net-misc/kea:samples - Install sample configuration files
 net-misc/kea:shell - Install kea-shell text management client for Control Agent
-net-misc/kio-zeroconf:kf6compat - Disable components colliding with KF6, depend on KF6 components instead
 net-misc/knock:server - Installs the knockd server daemon.
 net-misc/libteam:zmq - Build witch net-libs/zeromq support
 net-misc/lldpd:cdp - Enable Cisco Discovery Protocol
@@ -6736,19 +6730,19 @@ net-p2p/bitcoin-core:qrcode - Enable generation of QR Codes for receiving paymen
 net-p2p/bitcoin-core:sqlite - Support descriptor wallets in SQLite format
 net-p2p/bitcoin-core:system-leveldb - Link with virtual/bitcoin-leveldb rather than embedding an internal copy
 net-p2p/bitcoin-core:system-libsecp256k1 - Link with dev-libs/libsecp256k1 rather than embedding an internal copy
-net-p2p/bitcoin-core:systemtap - Enable SystemTAP/DTrace tracing
+net-p2p/bitcoin-core:systemtap - Enable SystemTap/DTrace tracing
 net-p2p/bitcoin-core:upnp - Enable Universal Plug and Play
 net-p2p/bitcoin-core:zeromq - Report blocks and transactions via zeromq
 net-p2p/bitcoin-qt:external-signer - Include support for external wallet signer programs
 net-p2p/bitcoin-qt:nat-pmp - Enable NAT-PMP port forwarding
 net-p2p/bitcoin-qt:qrcode - Enable generation of QR Codes for receiving payments
-net-p2p/bitcoin-qt:systemtap - Enable SystemTAP/DTrace tracing
+net-p2p/bitcoin-qt:systemtap - Enable SystemTap/DTrace tracing
 net-p2p/bitcoin-qt:upnp - Enable Universal Plug and Play
 net-p2p/bitcoin-qt:wallet - Enable wallet support
 net-p2p/bitcoin-qt:zeromq - Report blocks and transactions via zeromq
 net-p2p/bitcoind:external-signer - Include support for external wallet signer programs
 net-p2p/bitcoind:nat-pmp - Enable NAT-PMP port forwarding
-net-p2p/bitcoind:systemtap - Enable SystemTAP/DTrace tracing
+net-p2p/bitcoind:systemtap - Enable SystemTap/DTrace tracing
 net-p2p/bitcoind:upnp - Enable Universal Plug and Play
 net-p2p/bitcoind:wallet - Enable wallet support
 net-p2p/bitcoind:zeromq - Report blocks and transactions via zeromq
@@ -6878,7 +6872,6 @@ net-proxy/tsocks:tordns - Apply tordns patch which allows transparent TORificati
 net-voip/mumble:g15 - Enable support for the Logitech G15 LCD (and compatible devices).
 net-voip/mumble:pipewire - Enable pipewire support for audio output.
 net-voip/mumble:rnnoise - Enable alternative noise suppression option based on RNNoise.
-net-voip/murmur:grpc - Use net-libs/grpc to enable remote control capabilities.
 net-voip/murmur:ice - Use dev-libs/Ice to enable remote control capabilities.
 net-voip/umurmur:mbedtls - Use net-libs/mbedtls as TLS provider
 net-voip/umurmur:shm - Enable shared memory support
@@ -7992,7 +7985,7 @@ sys-apps/watchdog:nfs - enable support for checking nfs mounts
 sys-apps/xdg-desktop-portal:flatpak - Enable sys-apps/flatpak integration
 sys-apps/xdg-desktop-portal:seccomp - Use sys-apps/bubblewrap (which requires seccomp) to sandbox some functionality like icon handling
 sys-apps/xinetd:rpc - support RPC services
-sys-auth/elogind:cgroup-hybrid - Use hybrid cgroup hierarchy (OpenRC's default) instead of unified.
+sys-auth/elogind:cgroup-hybrid - Use hybrid cgroup hierarchy instead of unified (OpenRC's default).
 sys-auth/munge:gcrypt - Use libgcrypt instead of openssl
 sys-auth/nss-pam-ldapd:pynslcd - Install the python implementation along with the standard implementation
 sys-auth/nss-pam-ldapd:utils - Install the command-line utilities
@@ -8028,7 +8021,7 @@ sys-auth/sssd:nfsv4 - Add support for the nfsv4 idmapd plugin provided by net-fs
 sys-auth/sssd:samba - Add Privileged Attribute Certificate Support for Kerberos
 sys-auth/sssd:subid - Support subordinate uid and gid ranges in FreeIPA
 sys-auth/sssd:sudo - Build helper to let app-admin/sudo use sssd provided information
-sys-auth/sssd:systemtap - Enable SystemTAP/DTrace tracing
+sys-auth/sssd:systemtap - Enable SystemTap/DTrace tracing
 sys-block/f3:extra - Build the additional f3probe, f3brew and f3fix utility (requires sys-block/parted and virtual/udev)
 sys-block/fio:aio - Enable AIO ioengine
 sys-block/fio:curl - Enable HTTP engine for S3 and WebDav support support via net-misc/curl
