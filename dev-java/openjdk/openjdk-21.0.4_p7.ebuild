@@ -46,7 +46,7 @@ S="${WORKDIR}/jdk${SLOT}u-jdk-${MY_PV//+/-}"
 
 LICENSE="GPL-2-with-classpath-exception"
 SLOT="${MY_PV%%[.+]*}"
-KEYWORDS="~amd64 ~arm64 ~ppc64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 
 # lto temporarily disabled due to https://bugs.gentoo.org/916735
 IUSE="alsa big-endian cups debug doc examples headless-awt javafx +jbootstrap selinux source +system-bootstrap systemtap"
@@ -176,7 +176,7 @@ src_configure() {
 	fi
 
 	# Workaround for bug #938302
-	if use systemtap && ! has_version "dev-debug/systemtap[dtrace-symlink(-)]" ; then
+	if use systemtap && has_version "dev-debug/systemtap[-dtrace-symlink(+)]" ; then
 		export DTRACE="${BROOT}"/usr/bin/stap-dtrace
 	fi
 
